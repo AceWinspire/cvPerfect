@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "sass:compile": "node-sass --watch --include-path sass public/scss/cvperfect.scss public/css/cvperfect.css",
+    "test-watch": "nodemon --exec 'npm test'"
   },
   "dependencies": {
     "bootstrap": "^4.2.1",
@@ -13,6 +15,7 @@
     "express-handlebars": "^3.0.0",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "node-sass": "^4.11.0"
   }
 }
