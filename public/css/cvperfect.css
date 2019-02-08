@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Titillium+Web");
 body {
   padding-top: 60px;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
+  /*AOS override*/
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png"); }
 
 html {
   width: 100%;
   height: 100%;
   font-size: 1rem;
-  line-height: 1.4; }
+  line-height: 1.4;
+  overflow-x: hidden; }
 
 ::-moz-selection {
   background: #b3d4fc;
@@ -52,7 +56,8 @@ section {
 section {
   width: 100%;
   height: 100%;
-  padding-top: 50px; }
+  padding: 70px 0px 35px 0px;
+  min-height: 70vh; }
   section .title {
     width: 100%;
     text-align: center; }
@@ -62,6 +67,12 @@ section {
       color: #009af8;
       font-weight: 400;
       text-transform: uppercase; }
+      section .title h2 span {
+        border-radius: 10px;
+        background: #009af8;
+        color: #fff;
+        padding: 0 15px;
+        font-weight: 600; }
   section .description {
     width: 100%;
     text-align: justify;
@@ -105,7 +116,7 @@ header {
   background-size: cover;
   position: relative;
   z-index: -1;
-  height: 40vh; }
+  height: 60vh; }
   header .main-title,
   header .subtitle {
     text-align: center;
@@ -115,8 +126,7 @@ header {
     weight: 600;
     padding: 2rem 0; }
   header .subtitle {
-    font-size: 1.5rem;
-    padding: 1rem 0; }
+    font-size: 1.2rem; }
 
 .img-wrap {
   width: 100%;
@@ -128,11 +138,16 @@ header {
 /*
 STEPS section
 */
-.steps .description {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: justify; }
+.steps {
+  min-height: 100vh;
+  height: 100%;
+  padding-bottom: 51px;
+  margin-top: -45px; }
+  .steps .description {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: justify; }
 
 .resume-app {
   position: relative;
@@ -169,8 +184,7 @@ STEPS section
         .resume-app input[type="email"]:focus label:first-child {
           margin-bottom: 0;
           border-bottom: none; }
-  .resume-app .button,
-  .resume-app .rerun-button {
+  .resume-app .button {
     padding: 10px 20px;
     border-radius: 3px;
     background: #009af8;
@@ -178,12 +192,10 @@ STEPS section
     text-transform: uppercase;
     letter-spacing: 1px;
     display: inline-block;
-    cursor: pointer; }
-    .resume-app .button:hover,
-    .resume-app .rerun-button:hover {
+    width: 100%; }
+    .resume-app .button:hover {
       background: #008adf; }
-    .resume-app .button.rerun-button,
-    .resume-app .rerun-button.rerun-button {
+    .resume-app .button.rerun-button {
       border: 1px solid rgba(255, 255, 255, 0.6);
       margin-bottom: 50px;
       box-shadow: 0px 10px 15px -6px rgba(0, 0, 0, 0.2);
@@ -193,9 +205,13 @@ STEPS section
     max-width: 600px;
     margin: 0px auto;
     transition: transform 300ms ease-in-out; }
+    .resume-app .modal-wrap img {
+      width: 100%;
+      height: auto;
+      max-height: 300px; }
   .resume-app .modal-header {
     height: 45px;
-    background: white;
+    background: transparent;
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: center;
@@ -215,7 +231,7 @@ STEPS section
     perspective: 1000px; }
   .resume-app .modal-body {
     background: white;
-    padding: 40px 100px;
+    padding: 10px 20px;
     box-shadow: 0 2px 2px rgba(10, 16, 20, 0.24), 0 0 2px rgba(10, 16, 20, 0.12);
     margin-bottom: 50px;
     position: absolute;
@@ -223,7 +239,7 @@ STEPS section
     display: none;
     box-sizing: border-box;
     width: 100%;
-    transform-origin: top left; }
+    transform-origin: top; }
     .resume-app .modal-body.is-showing {
       display: block; }
   .resume-app .animate-out {
@@ -263,23 +279,21 @@ STEPS section
 /*
 Browse templates
 */
-.templates .loop {
-  min-height: 75vh; }
-
-.templates .owl-carousel {
-  margin-top: 3rem; }
-
-.templates .owl-item > div {
-  cursor: pointer;
-  margin: 6% 8%;
-  transition: margin 0.4s ease; }
-
-.templates .owl-item.center > div {
-  cursor: auto;
-  margin: 0; }
-
-.templates .owl-item:not(.center) > div:hover {
-  opacity: .75; }
+.templates {
+  background: #fff; }
+  .templates .loop {
+    min-height: 75vh; }
+  .templates .owl-carousel {
+    margin-top: 3rem; }
+  .templates .owl-item > div {
+    cursor: pointer;
+    margin: 6% 8%;
+    transition: margin 0.4s ease; }
+  .templates .owl-item.center > div {
+    cursor: auto;
+    margin: 0; }
+  .templates .owl-item:not(.center) > div:hover {
+    opacity: .75; }
 
 /*
 CTA - MAIN
@@ -443,18 +457,22 @@ footer {
 /*RESPONSIVE VIEW*/
 @media only screen and (min-width: 1440px) {
   .templates .loop {
-    min-height: 55vh; } }
+    min-height: 55vh; }
+  header .img-wrap {
+    margin-top: 35vh; } }
 
-@media only screen and (max-width: 999px) {
+@media only screen and (max-width: 1200px) {
   body {
-    padding-top: 30px; }
+    padding-top: 30px;
+    background-image: none; }
   section {
     padding-top: 30px; }
   .img-wrap {
-    margin-top: 0; }
+    margin-top: -10vh; }
     .img-wrap img {
       width: 100%;
-      height: auto; }
+      height: auto;
+      max-height: 400px; }
   .live-feed {
     float: left; }
     .live-feed .row {
@@ -462,11 +480,14 @@ footer {
     .live-feed #instafeed .post {
       width: 100%;
       height: 100%;
+      margin: 10px 0;
       min-height: 50vh; }
-  header .main-title {
-    font-size: 2rem; }
-  header .subtitle {
-    padding: 0 0; }
+  header {
+    height: 40vh; }
+    header .main-title {
+      font-size: 2rem; }
+    header .subtitle {
+      padding: 0 0; }
   .resume-app .button {
     width: 100%; }
   .resume-app .modal-body {
@@ -478,8 +499,7 @@ footer {
   .resume-app .modal-body-step-3 {
     min-height: 2rem; }
   .resume-app .modal-body-step-3 .description {
-    font-size: 1.3rem;
-    padding: 2rem 0; }
+    font-size: 1rem; }
   .cta-main .button-cta a {
     font-size: 1rem;
     padding: 1rem;

@@ -14,12 +14,17 @@ $font-titles: 'Titillium Web', sans-serif;
 body{
     padding-top: 60px;
     font-family: $font-base;
+    overflow-x: hidden; /*AOS override*/
+    
+background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+
 }
 html{
     width:100%;
     height:100%;
     font-size: 1rem;
     line-height: 1.4;
+    overflow-x: hidden;
 }
 ::-moz-selection {
     background: #b3d4fc;
@@ -61,11 +66,14 @@ section{
     padding: 0;
     margin:0;
     min-height: 50vh;
+    
 }
 section{
     width:100%;
     height: 100%;
-    padding-top: 50px;
+    padding: 70px 0px 35px 0px;
+    
+    min-height: 70vh;
     .title{
         width: 100%;
         text-align: center;
@@ -75,6 +83,13 @@ section{
             color: $blue;
             font-weight: 400;
             text-transform: uppercase;
+            span{
+                border-radius:10px;
+                background: $blue;
+                color:#fff;
+                padding:0 15px;
+                font-weight: 600;
+            }
         }
     }
     .description{
@@ -125,7 +140,7 @@ header{
     background-size: cover;
     position: relative;
     z-index: -1;
-    height:40vh;
+    height:60vh;
     .main-title,
     .subtitle{
         text-align:center;
@@ -137,8 +152,7 @@ header{
         padding:2rem 0;
     }
     .subtitle{
-        font-size: 1.5rem;
-        padding: 1rem 0;
+        font-size: 1.2rem;
     }
 }
 .img-wrap{
@@ -152,7 +166,11 @@ header{
 /*
 STEPS section
 */
-.steps{ 
+.steps{
+    min-height: 100vh;
+    height: 100%;
+    padding-bottom: 51px;
+    margin-top: -45px;
     .description{
         width:100%;
         max-width: 600px;
@@ -196,8 +214,7 @@ STEPS section
             }
         }
     }
-    .button,
-    .rerun-button{
+    .button{
         padding: 10px 20px;
         border-radius: 3px;
         background: $blue;
@@ -205,7 +222,7 @@ STEPS section
         text-transform: uppercase;
         letter-spacing: 1px;
         display: inline-block;
-        cursor: pointer;
+        width:100%;
         &:hover{
             background: darken($blue, 5%);
         }
@@ -221,10 +238,11 @@ STEPS section
         max-width: 600px;
         margin: 0px auto;
         transition: transform 300ms ease-in-out;
+        img{width:100%;height:auto;max-height: 300px;}
     }
     .modal-header{
         height: 45px;
-        background: white;
+        background: transparent;
         border-bottom: 1px solid #ccc;
         display: flex;
         justify-content: center;
@@ -249,7 +267,7 @@ STEPS section
     }
     .modal-body{
         background: white;
-        padding: 40px 100px;
+        padding: 10px 20px;
         @include box_shadow;
         margin-bottom: 50px;
         position: absolute;
@@ -257,7 +275,7 @@ STEPS section
         display: none;
         box-sizing: border-box;
         width: 100%;
-        transform-origin: top left;
+        transform-origin: top;
         &.is-showing{
             display: block;
         }
@@ -309,7 +327,7 @@ STEPS section
 /*
 Browse templates
 */
-.templates{
+.templates{background:#fff;
     .loop{
         min-height:75vh;
     }
@@ -530,20 +548,21 @@ footer{
     .templates{
         .loop{min-height:55vh;}
     }
+    header .img-wrap{margin-top: 35vh;}
 }
-@media only screen and (max-width: 999px){
-    body{padding-top: 30px;}
+@media only screen and (max-width: 1200px){
+    body{padding-top: 30px;background-image: none;}
     section{padding-top: 30px;}
-    .img-wrap{margin-top: 0;
-        img{width:100%;height: auto;}
+    .img-wrap{margin-top: -10vh;
+        img{width:100%;height: auto; max-height: 400px;}
     }
     .live-feed{float:left;
         .row{display: initial;}
         #instafeed{
-            .post{width:100%;height:100%;min-height: 50vh;}
+            .post{width:100%;height:100%;margin:10px 0;min-height: 50vh;}
         }
     }
-    header{
+    header{height:40vh;
         .main-title{font-size: 2rem;}
         .subtitle{padding: 0 0;}
     }
@@ -552,7 +571,7 @@ footer{
         .modal-body{padding: 0 0;box-shadow: none;}
         .radio-button-label > img {width:100%;max-width: 130px;}
         .modal-body-step-3{min-height: 2rem;}
-        .modal-body-step-3 .description{font-size: 1.3rem;padding: 2rem 0;}
+        .modal-body-step-3 .description{font-size: 1rem;}
     }
     .cta-main{
         .button-cta a{font-size: 1rem; padding: 1rem; line-height: 2; margin: 1rem 0 auto;width:100%;}
