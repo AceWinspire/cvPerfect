@@ -3,6 +3,44 @@ body {
   padding-top: 60px;
   font-family: "Open Sans", sans-serif; }
 
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  line-height: 1.4; }
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+textarea {
+  resize: vertical; }
+
 header,
 section {
   width: 100%;
@@ -14,7 +52,7 @@ section {
 section {
   width: 100%;
   height: 100%;
-  padding-top: 90px; }
+  padding-top: 50px; }
   section .title {
     width: 100%;
     text-align: center; }
@@ -88,7 +126,6 @@ header {
     max-width: 640px; }
 
 /*
-/*
 STEPS section
 */
 .steps .description {
@@ -152,8 +189,9 @@ STEPS section
       box-shadow: 0px 10px 15px -6px rgba(0, 0, 0, 0.2);
       display: none; }
   .resume-app .modal-wrap {
+    width: 100%;
     max-width: 600px;
-    margin: 50px auto;
+    margin: 0px auto;
     transition: transform 300ms ease-in-out; }
   .resume-app .modal-header {
     height: 45px;
@@ -225,6 +263,9 @@ STEPS section
 /*
 Browse templates
 */
+.templates .loop {
+  min-height: 75vh; }
+
 .templates .owl-carousel {
   margin-top: 3rem; }
 
@@ -260,7 +301,8 @@ CTA - MAIN
     border: 1px solid transparent;
     -webkit-transition: .3s ease-out;
     transition: .3s ease-out;
-    text-decoration: none; }
+    text-decoration: none;
+    display: inline-block; }
     .cta-main .button-cta a:hover, .cta-main .button-cta a:active, .cta-main .button-cta a:focus {
       box-shadow: 0 2px 2px rgba(10, 16, 20, 0.24), 0 0 2px rgba(10, 16, 20, 0.12);
       color: #292b2e;
@@ -278,7 +320,7 @@ PRICING
     margin: 0 auto;
     margin-top: 50px; }
   .pricing .promo {
-    width: 250px;
+    width: 32%;
     background: #0F1012;
     color: #d1d1d1;
     float: left; }
@@ -293,11 +335,11 @@ PRICING
     font-size: 13px; }
   .pricing .promo .price {
     display: block;
-    width: 250px;
+    width: 100%;
     background: #292b2e;
     margin: 15px 0 10px 0;
     text-align: center;
-    font-size: 23px;
+    font-size: 1.5rem;
     padding: 17px 0 17px 0; }
   .pricing ul {
     display: block;
@@ -364,7 +406,6 @@ PRICING
         left: 0;
         right: 0;
         height: 50px;
-        /*background: rgba($accent,.8);*/
         display: flex;
         justify-content: space-around;
         transform: translateY(-100%);
@@ -382,7 +423,8 @@ PRICING
 footer {
   background: #0F1012;
   width: 100%;
-  min-height: 4rem; }
+  min-height: 4rem;
+  float: left; }
   footer ul {
     list-style: none;
     float: left;
@@ -397,3 +439,64 @@ footer {
     color: #d1d1d1;
     font-size: 0.75rem;
     text-align: right; }
+
+/*RESPONSIVE VIEW*/
+@media only screen and (min-width: 1440px) {
+  .templates .loop {
+    min-height: 55vh; } }
+
+@media only screen and (max-width: 999px) {
+  body {
+    padding-top: 30px; }
+  section {
+    padding-top: 30px; }
+  .img-wrap {
+    margin-top: 0; }
+    .img-wrap img {
+      width: 100%;
+      height: auto; }
+  .live-feed {
+    float: left; }
+    .live-feed .row {
+      display: initial; }
+    .live-feed #instafeed .post {
+      width: 100%;
+      height: 100%;
+      min-height: 50vh; }
+  header .main-title {
+    font-size: 2rem; }
+  header .subtitle {
+    padding: 0 0; }
+  .resume-app .button {
+    width: 100%; }
+  .resume-app .modal-body {
+    padding: 0 0;
+    box-shadow: none; }
+  .resume-app .radio-button-label > img {
+    width: 100%;
+    max-width: 130px; }
+  .resume-app .modal-body-step-3 {
+    min-height: 2rem; }
+  .resume-app .modal-body-step-3 .description {
+    font-size: 1.3rem;
+    padding: 2rem 0; }
+  .cta-main .button-cta a {
+    font-size: 1rem;
+    padding: 1rem;
+    line-height: 2;
+    margin: 1rem 0 auto;
+    width: 100%; }
+  .pricing .promo {
+    width: 100%;
+    margin: 5px 0; }
+    .pricing .promo .price {
+      width: 100%; }
+  .pricing .scale {
+    transform: scale(1);
+    box-shadow: none; }
+  .pricing button {
+    width: 100%;
+    margin: 0 0;
+    border-radius: 0px; }
+  .navbar-toggler {
+    background-color: #009af8; } }
