@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Titillium+Web");
+body {
+  padding-top: 60px;
+  font-family: "Open Sans", sans-serif; }
+
 header,
 section {
   width: 100%;
@@ -8,31 +13,98 @@ section {
 
 section {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  padding-top: 90px; }
   section .title {
     width: 100%;
     text-align: center; }
-    section .title .h2 {
-      text-align: center; }
+    section .title h2 {
+      font-family: "Titillium Web", sans-serif;
+      text-align: center;
+      color: #009af8;
+      font-weight: 400;
+      text-transform: uppercase; }
   section .description {
     width: 100%;
     text-align: justify;
     padding: 10px 0; }
+  section.live-feed .title {
+    padding: 2rem 0; }
+    section.live-feed .title h2 {
+      color: #fff; }
+
+/*
+NAV
+*/
+nav {
+  box-shadow: 0 2px 2px rgba(10, 16, 20, 0.24), 0 0 2px rgba(10, 16, 20, 0.12); }
+
+nav.nav-hide {
+  opacity: 0;
+  -webkit-transform: translate(0, -60px);
+  -webkit-transition: -webkit-transform .2s,background .3s,color .3s,opacity 0 .3s; }
+
+nav.nav-show {
+  opacity: 1;
+  z-index: 1000000000000000;
+  -webkit-transform: translate(0, 0);
+  -webkit-transition: -webkit-transform .2s,background .3s,color .3s; }
+
+.bg-light {
+  background-color: #fff !important; }
+
+.navbar-light .navbar-nav .nav-link {
+  color: #292b2e; }
 
 /*
 HEADER
 */
+header {
+  background: linear-gradient(0deg, rgba(3, 169, 244, 0.36), rgba(3, 169, 244, 0.36)), url(../img/header_bg.jpg), rgba(170, 170, 170, 0.25);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  z-index: -1;
+  height: 40vh; }
+  header .main-title,
+  header .subtitle {
+    text-align: center;
+    color: #fff; }
+  header .main-title {
+    font-size: 4.25rem;
+    weight: 600;
+    padding: 2rem 0; }
+  header .subtitle {
+    font-size: 1.5rem;
+    padding: 1rem 0; }
+
+.img-wrap {
+  width: 100%;
+  text-align: center;
+  margin-top: -25vh; }
+  .img-wrap img {
+    max-width: 640px; }
+
+/*
 /*
 STEPS section
 */
+.steps .description {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: justify; }
+
 .resume-app {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 100vh; }
+  min-height: 35rem; }
   .resume-app input[type="text"],
   .resume-app input[type="email"] {
-    padding: 10px 20px;
+    padding: 0.75rem 1.25rem;
     border: 1px solid #999;
     border-radius: 3px;
     display: block;
@@ -42,7 +114,7 @@ STEPS section
     outline: none; }
     .resume-app input[type="text"]:focus,
     .resume-app input[type="email"]:focus {
-      border-color: #FF6F00; }
+      border-color: #009af8; }
       .resume-app input[type="text"]:focus input[type="radio"],
       .resume-app input[type="email"]:focus input[type="radio"] {
         margin-right: 10px; }
@@ -50,10 +122,10 @@ STEPS section
       .resume-app input[type="email"]:focus label {
         margin-bottom: 20px;
         display: block;
-        font-size: 18px;
+        font-size: 1rem;
         color: #666;
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #d1d1d1;
+        border-bottom: 1px solid #d1d1d1;
         padding: 20px 0;
         cursor: pointer; }
         .resume-app input[type="text"]:focus label:first-child,
@@ -64,7 +136,7 @@ STEPS section
   .resume-app .rerun-button {
     padding: 10px 20px;
     border-radius: 3px;
-    background: #FF6F00;
+    background: #009af8;
     color: white;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -72,7 +144,7 @@ STEPS section
     cursor: pointer; }
     .resume-app .button:hover,
     .resume-app .rerun-button:hover {
-      background: #e66400; }
+      background: #008adf; }
     .resume-app .button.rerun-button,
     .resume-app .rerun-button.rerun-button {
       border: 1px solid rgba(255, 255, 255, 0.6);
@@ -99,14 +171,14 @@ STEPS section
       background: rgba(0, 0, 0, 0.2); }
       .resume-app .modal-header span.is-active {
         background: rgba(0, 0, 0, 0.4);
-        background: #FF8F00; }
+        background: #009af8; }
   .resume-app .modal-bodies {
     position: relative;
     perspective: 1000px; }
   .resume-app .modal-body {
     background: white;
     padding: 40px 100px;
-    box-shadow: 0px 50px 30px -30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 2px rgba(10, 16, 20, 0.24), 0 0 2px rgba(10, 16, 20, 0.12);
     margin-bottom: 50px;
     position: absolute;
     top: 0;
@@ -139,10 +211,23 @@ STEPS section
   100% {
     opacity: 1;
     transform: rotateX(0deg); } }
+  .resume-app .image_radio_button_control label {
+    margin-right: 10px; }
+  .resume-app .image_radio_button_control .radio-button-label > input {
+    display: none; }
+  .resume-app .image_radio_button_control .radio-button-label > img {
+    cursor: pointer;
+    border: 3px solid #ddd;
+    width: 150px; }
+  .resume-app .image_radio_button_control .radio-button-label > input:checked + img {
+    border: 3px solid #2885bb; }
 
 /*
 Browse templates
 */
+.templates .owl-carousel {
+  margin-top: 3rem; }
+
 .templates .owl-item > div {
   cursor: pointer;
   margin: 6% 8%;
@@ -158,68 +243,157 @@ Browse templates
 /*
 CTA - MAIN
 */
+.cta-main {
+  width: 100%;
+  background: #009af8;
+  min-height: 5rem;
+  padding: 3rem 0;
+  color: black; }
+  .cta-main .button-cta a {
+    padding: 1.5rem;
+    font-size: 2rem;
+    min-height: 4rem;
+    line-height: 4rem;
+    border-radius: 1rem;
+    background: #292b2e;
+    color: #fff;
+    border: 1px solid transparent;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
+    text-decoration: none; }
+    .cta-main .button-cta a:hover, .cta-main .button-cta a:active, .cta-main .button-cta a:focus {
+      box-shadow: 0 2px 2px rgba(10, 16, 20, 0.24), 0 0 2px rgba(10, 16, 20, 0.12);
+      color: #292b2e;
+      background: #fff; }
+
 /*
 PRICING
 */
-.promos {
-  width: 800px;
-  margin: 0 auto;
-  margin-top: 50px; }
+.pricing {
+  min-height: 40rem;
+  background: #f1f1f1; }
+  .pricing .promos {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px; }
+  .pricing .promo {
+    width: 250px;
+    background: #0F1012;
+    color: #d1d1d1;
+    float: left; }
+  .pricing .deal {
+    padding: 10px 0 0 0; }
+  .pricing .deal span {
+    display: block;
+    text-align: center; }
+  .pricing .deal span:first-of-type {
+    font-size: 23px; }
+  .pricing .deal span:last-of-type {
+    font-size: 13px; }
+  .pricing .promo .price {
+    display: block;
+    width: 250px;
+    background: #292b2e;
+    margin: 15px 0 10px 0;
+    text-align: center;
+    font-size: 23px;
+    padding: 17px 0 17px 0; }
+  .pricing ul {
+    display: block;
+    margin: 20px 0 10px 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    color: #999999; }
+  .pricing li {
+    display: block;
+    margin: 10px 0 0 0; }
+  .pricing button {
+    border: none;
+    border-radius: 40px;
+    background: #009af8;
+    color: #f9f9f9;
+    padding: 10px 37px;
+    margin: 10px 0 20px 60px; }
+    .pricing button:hover, .pricing button:active, .pricing button:focus {
+      background: #d1d1d1;
+      color: #009af8; }
+  .pricing .scale {
+    transform: scale(1.2);
+    box-shadow: 0 0 4px 1px rgba(20, 20, 20, 0.8); }
+    .pricing .scale button {
+      background: #03A9F4; }
+      .pricing .scale button:hover, .pricing .scale button:active, .pricing .scale button:focus {
+        background: #d1d1d1;
+        color: #009af8; }
+    .pricing .scale .price {
+      color: #64AAA4; }
 
-.promo {
-  width: 250px;
-  background: #0F1012;
-  color: #f9f9f9;
-  float: left; }
-
-.deal {
-  padding: 10px 0 0 0; }
-
-.deal span {
-  display: block;
-  text-align: center; }
-
-.deal span:first-of-type {
-  font-size: 23px; }
-
-.deal span:last-of-type {
-  font-size: 13px; }
-
-.promo .price {
-  display: block;
-  width: 250px;
+/*LIVE FEED*/
+.live-feed {
   background: #292b2e;
-  margin: 15px 0 10px 0;
-  text-align: center;
-  font-size: 23px;
-  padding: 17px 0 17px 0; }
+  width: 100%;
+  height: 100%; }
+  .live-feed .title h2 {
+    color: #fff; }
+  .live-feed #instafeed {
+    position: relative;
+    width: 100%;
+    float: left; }
+    .live-feed #instafeed .post {
+      position: relative;
+      width: 50%;
+      height: 15vw;
+      background: #000;
+      display: inline-block;
+      float: left;
+      overflow: hidden; }
+      .live-feed #instafeed .post .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-position: center;
+        background-size: cover;
+        transition: all .15s ease-in-out; }
+      .live-feed #instafeed .post ul {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        right: 0;
+        height: 50px;
+        /*background: rgba($accent,.8);*/
+        display: flex;
+        justify-content: space-around;
+        transform: translateY(-100%);
+        transition: all .15s ease-in-out;
+        color: #FFF; }
+        .live-feed #instafeed .post ul li {
+          text-align: center;
+          line-height: 50px; }
+      .live-feed #instafeed .post:hover .image {
+        opacity: .5;
+        transform: scale(1.15) translate3d(0, 0, 0); }
+      .live-feed #instafeed .post:hover ul {
+        transform: translateX(0); }
 
-ul {
-  display: block;
-  margin: 20px 0 10px 0;
-  padding: 0;
-  list-style-type: none;
-  text-align: center;
-  color: #999999; }
-
-li {
-  display: block;
-  margin: 10px 0 0 0; }
-
-button {
-  border: none;
-  border-radius: 40px;
-  background: #03A9F4;
-  color: #f9f9f9;
-  padding: 10px 37px;
-  margin: 10px 0 20px 60px; }
-
-.scale {
-  transform: scale(1.2);
-  box-shadow: 0 0 4px 1px rgba(20, 20, 20, 0.8); }
-
-.scale button {
-  background: #03A9F4; }
-
-.scale .price {
-  color: #64AAA4; }
+footer {
+  background: #0F1012;
+  width: 100%;
+  min-height: 4rem; }
+  footer ul {
+    list-style: none;
+    float: left;
+    width: 100%;
+    line-height: 4rem; }
+    footer ul li > a {
+      float: left;
+      color: #fff;
+      padding: 5px; }
+  footer .copyright {
+    line-height: 4rem;
+    color: #d1d1d1;
+    font-size: 0.75rem;
+    text-align: right; }
